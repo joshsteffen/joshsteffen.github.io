@@ -1,0 +1,98 @@
+html {
+    overflow-y: scroll
+}
+
+:root {
+  --bgcolor: white;
+  --fontcolor: #444;
+  --linkcolor: #088;
+}
+
+body {
+    max-width: 70ch;
+    margin: 40px auto;
+    padding: 0 10px;
+    font-size: 1rem;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    color: var(--fontcolor);
+    background: var(--bgcolor);
+    -webkit-text-size-adjust: 100%;
+}
+
+main {
+    padding: 24px 0;
+}
+
+header, footer {
+    font-family: monospace;
+}
+
+h1, h2, h3 {
+    font-family: monospace;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+a {
+    color: var(--linkcolor);
+}
+
+a:hover {
+    color: var(--fontcolor);
+}
+
+pre {
+    overflow-x: auto;
+    padding: 0.5rem;
+}
+
+figcaption {
+    color: #888;
+    text-align: center;
+}
+
+figure {
+    margin: auto
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.date {
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.pagination {
+    font-weight: bold;
+    padding: 0;
+    text-align: center;
+}
+
+.page-item {
+    display: inline;
+}
+
+.page-item > a {
+    color: var(--fontcolor);
+}
+
+.post-title {
+    font-family: monospace;
+    font-weight: bold;
+}
