@@ -2,6 +2,7 @@
 title: "Struggling for Blog Ideas: A Journey with ChatGPT"
 date: 2024-01-17T17:25:03-05:00
 type: posts
+hasMath: true
 ---
 
 So, there I was, staring at my blank blogging platform, desperately wanting to share something insightful with my audience. The pressure to create engaging content was real, but my mind seemed to be in a creativity lockdown. That's when I decided to turn to my trusty companion - ChatGPT.
