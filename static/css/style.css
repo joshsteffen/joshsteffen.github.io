@@ -5,7 +5,7 @@ html {
 :root {
   --bgcolor: white;
   --fontcolor: #444;
-  --linkcolor: #088;
+  --linkcolor: #000;
 }
 
 body {
@@ -48,6 +48,10 @@ a:hover {
 pre {
     overflow-x: auto;
     padding: 0.5rem;
+}
+
+code {
+    font-size: 0.95rem;
 }
 
 figcaption {
