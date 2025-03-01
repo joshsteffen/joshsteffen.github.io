@@ -2,6 +2,7 @@
 title: "Hack The Vote 2024: weechal"
 date: 2024-11-10T10:40:00-05:00
 type: posts
+tags: ["Binary Exploitation", "CTF"]
 ---
 
 Weechal was a binary exploitation challenge in Hack The Vote 2024, an election-themed computer security Capture the Flag (CTF) competition run by RPISEC.
