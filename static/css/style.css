@@ -1,11 +1,12 @@
 html {
-    overflow-y: scroll
+    overflow-y: scroll;
 }
 
 :root {
-  --bgcolor: white;
-  --fontcolor: #444;
-  --linkcolor: #000;
+    color-scheme: light dark;
+  --bgcolor: light-dark(white, #1a1b1f);
+  --fontcolor: light-dark(#444, #b8b8b8);
+  --linkcolor: light-dark(#000, #ccc);
 }
 
 body {
