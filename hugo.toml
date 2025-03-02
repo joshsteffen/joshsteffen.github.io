@@ -4,7 +4,7 @@ title = 'Josh Steffen'
 
 [markup]
   [markup.highlight]
-    style = 'github'
+    style = 'onedark'
 
 [params]
   subtitle = 'Computers or whatever'

