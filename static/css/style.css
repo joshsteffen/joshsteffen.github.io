@@ -64,7 +64,7 @@ figure {
     margin: auto
 }
 
-img, svg {
+img, svg, object {
     display: block;
     max-width: 100%;
     height: auto;

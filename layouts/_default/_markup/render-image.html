@@ -1,11 +1,10 @@
-{{ if .Title }}
 <figure>
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" />
-  <figcaption>{{ .Title }}</figcaption>
+  {{ if eq (path.Ext .Destination) ".svg" }}
+    <object type="image/svg+xml" role="img" data="{{ .Destination | safeURL }}"></object>
+  {{ else }}
+    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" />
+  {{end}}
+  {{ if .Title }}
+    <figcaption>{{ .Title }}</figcaption>
+  {{ end }}
 </figure>
-{{ else }}
-<figure>
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" />
-</figure>
-{{ end }}
-
