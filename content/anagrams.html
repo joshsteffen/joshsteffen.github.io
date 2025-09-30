@@ -1,0 +1,92 @@
++++
+title = "Manual Anagrammery"
++++
+
+<noscript>
+<h2>Enable JavaScript, coward!</h2>
+</noscript>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
+
+<style>
+  #need {
+    color: light-dark(green, mediumseagreen);
+  }
+
+  #have {
+    color: light-dark(red, orangered);
+  }
+</style>
+
+<form>
+  <label>Original:</label>
+  <input id="original" type="text" />
+  <button id="randomize" type="button">
+    <i class="fa fa-random"></i>
+  </button>
+  <p id="need"></p>
+  <p id="have"></p>
+  <label>Anagram:</label>
+  <input id="anagram" type="text" />
+</form>
+
+<script>
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  function getLetters(string) {
+    return string
+      .toUpperCase()
+      .split("")
+      .filter((l) => l.match(/\p{Letter}/u));
+  }
+
+  const originalElement = document.querySelector("#original");
+  const anagramElement = document.querySelector("#anagram");
+
+  let originalLetters = [];
+  let anagramLetters = [];
+
+  const update = () => {
+    anagramLetters = getLetters(anagramElement.value);
+
+    const need = originalLetters.slice();
+    const have = anagramLetters.slice();
+
+    for (let n = 0; n < have.length; n++) {
+      const m = need.indexOf(have[n]);
+      if (m !== -1) {
+        need.splice(m, 1);
+        have.splice(n, 1);
+        n--;
+      }
+    }
+
+    document.querySelector("#need").textContent = need.join("");
+    document.querySelector("#have").textContent = have.sort().join("");
+  };
+
+  originalElement.addEventListener("input", () => {
+    originalLetters = getLetters(originalElement.value);
+    update();
+  });
+
+  anagramElement.addEventListener("input", update);
+
+  document.querySelector("#randomize").addEventListener("click", () => {
+    shuffle(originalLetters);
+    update();
+  });
+
+  window.addEventListener("load", () => {
+    originalLetters = getLetters(originalElement.value);
+    update();
+  });
+</script>

@@ -7,6 +7,7 @@ html {
   --bgcolor: light-dark(white, #1a1b1f);
   --fontcolor: light-dark(#444, #b8b8b8);
   --linkcolor: light-dark(#000, #ccc);
+  --buttoncolor: light-dark(#e8e8e8, #303038);
 }
 
 body {
@@ -69,6 +70,36 @@ img, svg, object {
     max-width: 100%;
     height: auto;
     margin: auto
+}
+
+form {
+    margin: 4rem;
+}
+
+button, input[type="text"] {
+    border: none;
+    border-radius: 5px;
+    font-size: inherit;
+    background-color: var(--buttoncolor);
+}
+
+button {
+    padding: 0.8rem 1.8rem;
+}
+
+button:hover {
+    filter: invert(10%);
+}
+
+button:active {
+    filter: invert(20%);
+}
+
+input[type="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .center {
