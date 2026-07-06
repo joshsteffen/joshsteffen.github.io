@@ -5,6 +5,8 @@ title = 'Josh Steffen'
 [markup]
   [markup.highlight]
     style = 'onedark'
+  [markup.goldmark.renderer]
+    unsafe = true
 
 [params]
   subtitle = 'Computers or whatever'
