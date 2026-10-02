@@ -2,6 +2,8 @@ baseURL = 'https://joshsteffen.com/'
 title = 'Josh Steffen'
 
 [markup]
+  [markup.goldmark.renderer]
+    unsafe = true
   [markup.highlight]
     style = 'onedark'
 
@@ -31,3 +33,6 @@ title = 'Josh Steffen'
     name = 'email'
     url = 'mailto:%6a%6f%73%68%40%6a%6f%73%68%73%74%65%66%66%65%6e%2e%63%6f%6d'
     weight = 20
+
+[security]
+  allowContent = ['.*']
