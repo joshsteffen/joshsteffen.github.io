@@ -1,5 +1,4 @@
 baseURL = 'https://joshsteffen.com/'
-languageCode = 'en-us'
 title = 'Josh Steffen'
 
 [markup]
