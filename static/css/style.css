@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=PT+Serif&display=swap');
+
 html {
     overflow-y: scroll;
 }
@@ -11,11 +13,11 @@ html {
 }
 
 body {
-    max-width: 70ch;
+    max-width: 85ch;
     margin: 40px auto;
     padding: 0 10px;
     font-size: 1rem;
-    font-family: system-ui, sans-serif;
+    font-family: "PT Serif";
     line-height: 1.5;
     color: var(--fontcolor);
     background: var(--bgcolor);
@@ -26,12 +28,11 @@ main {
     padding: 24px 0;
 }
 
-header, footer {
-    font-family: monospace;
+code, footer, header, h1, h2, h3, .date, .tag, .post-title {
+    font-family: "Inconsolata", monospace;
 }
 
 h1, h2, h3 {
-    font-family: monospace;
     line-height: 1.2;
 }
 
@@ -50,10 +51,6 @@ a:hover {
 pre {
     overflow-x: auto;
     padding: 0.5rem;
-}
-
-code {
-    font-size: 0.90rem;
 }
 
 figcaption {
@@ -110,15 +107,12 @@ input[type="text"] {
 }
 
 .date {
-    font-family: monospace;
     font-weight: bold;
 }
 
 .tag {
     padding-left: 1rem;
     color: #888;
-    font-size: 0.95rem;
-    font-family: monospace;
     text-decoration: none;
 }
 
@@ -137,6 +131,44 @@ input[type="text"] {
 }
 
 .post-title {
-    font-family: monospace;
     font-weight: bold;
+}
+
+.chroma {
+    color: color-mix(var(--bgcolor), var(--fontcolor) 50%);
+    border: 1px solid color-mix(var(--bgcolor), var(--fontcolor) 20%);
+    border-radius: 10px;
+
+    /* keywords */
+    .k, .kn, .kr {
+        color: color-mix(var(--bgcolor), var(--fontcolor) 65%);
+    }
+
+    /* numbers */
+    .m, .mh, .mi {
+        color: color-mix(var(--bgcolor), var(--fontcolor) 80%);
+    }
+
+    /* names */
+    .n, .nf, .nn, .kr {
+        color: color-mix(var(--bgcolor), var(--fontcolor) 100%);
+    }
+
+    /* type names */
+    .kt {
+        color: color-mix(var(--bgcolor), var(--fontcolor) 80%);
+    }
+
+    /* strings and #include paths */
+    .cpf, .s, .sa, .se, .ss, .s2 {
+        color: color-mix(var(--bgcolor), var(--fontcolor) 70%);
+    }
+
+    .language-plaintext {
+        color: color-mix(var(--bgcolor), var(--fontcolor) 90%);
+    }
+}
+
+.katex {
+    font-size: 1.1rem !important;
 }

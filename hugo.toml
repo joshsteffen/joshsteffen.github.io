@@ -10,7 +10,7 @@ title = 'Josh Steffen'
       block = [['\[', '\]'], ['$$', '$$']]
       inline = [['\(', '\)'], ['$', '$']]
   [markup.highlight]
-    style = 'onedark'
+    noClasses = false
 
 [params]
   subtitle = 'Computers or whatever'
